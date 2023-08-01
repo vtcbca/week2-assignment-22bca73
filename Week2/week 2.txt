@@ -1,0 +1,126 @@
+ create table stud
+ (
+    id,name
+ );
+ insert into stud
+  values(1,"om");
+  insert into stud
+  values(2,"sai"),(3,"ram");
+  insert into stud
+  values(5,"radha"),(6,"gopal");
+ select *from stud;
+1|om
+2|sai
+3|ram
+5|radha
+6|gopal
+ .mode box
+ select *from stud;
++------------+
+¦ id ¦ name  ¦
++----+-------¦
+¦ 1  ¦ om    ¦
+¦ 2  ¦ sai   ¦
+¦ 3  ¦ ram   ¦
+¦ 5  ¦ radha ¦
+¦ 6  ¦ gopal ¦
++------------+
+
+CREATE TABLE stud
+(
+   id,name
+);
+> drop table stud;
+ select *from stud;
+create table stud
+  (
+   id primary key,
+    name
+  );
+ insert into stud
+ values(1,"om");
+ insert into stud
+ values(2,"sai");
+ insert into stud
+ values(3,"ram");
+ insert into stud
+ values(4,"radha");
+ insert into stud
+ values(5,"gopal");
+ select *from stud;
++----+-------+
+| id | name  |
++----+-------+
+| 1  | om    |
+| 2  | sai   |
+| 3  | ram   |
+| 4  | radha |
+| 5  | gopal |
++----+-------+
+sqlite> create table studdetail  
+(
+    id references stud(id),
+   city,mobileno
+);
+ insert into studdetail
+ values(1,"surat",9996782234),(2,"baroda",9935775230),(3,"bharuch",9106577304),(4,"bardoli",9925775430),(5,"varad",9016321569);
+ .mod box
+ select *from studdetail;
++---------------------------+
+¦ id ¦  city   ¦  mobileno  ¦
++----+---------+------------¦
+¦ 1  ¦ surat   ¦ 9996782234 ¦
+¦ 2  ¦ baroda  ¦ 9935775230 ¦
+¦ 3  ¦ bharuch ¦ 9106577304 ¦
+¦ 4  ¦ bardoli ¦ 9925775430 ¦
+¦ 5  ¦ varad   ¦ 9016321569 ¦
++---------------------------+
+ .mod box
+ select *from stud;
++------------+
+¦ id ¦ name  ¦
++----+-------¦
+¦ 1  ¦ om    ¦
+¦ 2  ¦ sai   ¦
+¦ 3  ¦ ram   ¦
+¦ 4  ¦ radha ¦
+¦ 5  ¦ gopal ¦
++------------+
+ select id from studdetail
+ where city="surat";
++----+
+¦ id ¦
++----¦
+¦ 1  ¦
++----+
+ select id from studdetail
+ where city like "b%";
++----+
+¦ id ¦
++----¦
+¦ 2  ¦
+¦ 3  ¦
+¦ 4  ¦
++----+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
